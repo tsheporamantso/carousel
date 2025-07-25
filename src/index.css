@@ -353,8 +353,8 @@ ul {
   max-width: 800px;
   text-align: center;
 }
-.slick-slide img {
-  display: inline-block;
+.slick-container .slick-slide img {
+  display: inline-block !important;
 }
 
 .slick-prev::before {
