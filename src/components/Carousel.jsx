@@ -2,30 +2,12 @@ import React, { useReducer, useEffect } from "react";
 import { list } from "../data";
 import { FaQuoteRight } from "react-icons/fa";
 import { FiChevronLeft, FiChevronRight } from "react-icons/fi";
-
-const NEXT = "NEXT";
-const PREV = "PREV";
+import reducer from "./hooks/reducer";
+import { NEXT, PREV } from "./actions";
 
 const defaultState = {
   people: list,
   currentPerson: 0,
-};
-
-const reducer = (state, action) => {
-  if (action.type === NEXT) {
-    const newPerson = state.currentPerson + 1;
-    return {
-      ...state,
-      currentPerson: newPerson >= state.people.length ? 0 : newPerson,
-    };
-  }
-  if (action.type === PREV) {
-    const newPerson = state.currentPerson - 1;
-    return {
-      ...state,
-      currentPerson: newPerson < 0 ? state.people.length - 1 : newPerson,
-    };
-  }
 };
 
 const Carousel = () => {
