@@ -15,6 +15,7 @@ const reducer = (state, action) => {
       currentPerson: newPerson < 0 ? state.people.length - 1 : newPerson,
     };
   }
+  throw new Error(`No matching "${action.type}" - action type`);
 };
 
 export default reducer;
