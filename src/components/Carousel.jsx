@@ -17,7 +17,7 @@ const Carousel = () => {
     const slider = setTimeout(() => {
       dispatch({ type: NEXT });
     }, 4000);
-    return () => clearInterval(slider);
+    return () => clearTimeout(slider);
   }, [state.currentPerson]);
 
   return (
